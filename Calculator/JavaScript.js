@@ -29,3 +29,5 @@ const buttons = document.querySelectorAll(".button, .Sbutton, .done, .clear");
 buttons.forEach(button => {
     button.addEventListener("click", handleButtonClick);
 });
+
+document.getElementById("input").textContent = "0";

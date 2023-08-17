@@ -27,7 +27,8 @@ body {
     background-color: #69AD00;
     padding: 0px;
     margin-top: 10px;
-    border-top: 10px solid #5D9900;
+    animation: screen-open 0.5s forwards ease-out;
+    border: solid 5px #5D9900;
 }
 
 .top {
@@ -48,8 +49,6 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-
-
 }
 
 button {
@@ -81,7 +80,18 @@ button {
 }
 
 .clear {
-    flex-basis: calc((100% - 30px) / 1);
+    flex-basis: calc((100% - 30px) / 4 * 3); /* Adjusted width for CLEAR button */
+    margin-right: 10px;
+}
+
+.clear, .power {
+    color: white;
+    background-color: #9E1010;
+    border: 5px solid white;
+}
+
+.clear:hover, .power:hover {
+    animation: special-button-hover 0.1s forwards ease-in;
 }
 
 .Sbutton {
@@ -90,13 +100,9 @@ button {
     border: 5px solid #C17700;
 }
 
-@keyframes button-hover {
-    0% {
-        background-color: inherit;
-        color: inherit;
-        transform: scale(1);
-    }
 
+
+@keyframes button-hover {
     100% {
         border-color: white;
         background-color: lightgreen; /* Change to your desired color */
@@ -104,3 +110,10 @@ button {
         transform: scale(1.2); /* Increase the size on hover */
     }
 }
+
+@keyframes special-button-hover {
+    100% {
+        transform: scale(1.1);
+    }
+}
+
